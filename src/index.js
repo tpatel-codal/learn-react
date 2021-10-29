@@ -1,37 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
 import './index.css'
 
-
+const book1 = {
+    "title": "Book1",
+    "description":"Here is the description",
+    "img":""
+}
+const book2 = {
+    "title": "Book2",
+    "description":"Here is the description 2",
+    "img":""
+}
 
 function BookList() {
     return (
         <div className="booklist">
-            <BookName/>
-            <BookName/>
-            <BookName/>
-            <BookName/>
-            <BookName/>
-            <BookName/>
+            <BookName title={book1.title} description={book1.description} img={book1.img}/>
+            <BookName title={book2.title} description={book2.description} img={book2.img}/>
         </div>
     )
 
 }
 
-const BookName = () => {
+const BookName = ({img, title, description}) => {
     return <div className='book'>
-        <img src="https://m.media-amazon.com/images/I/41gr3r3FSWL._SY346_.jpg" alt="book"/>
-        <h1>Book1</h1>
-        <BookDescription/>
-    </div>
-}
-const BookDescription = () => {
-    return <div>
-        <p> Here is the Description</p>
+        <img src={img} alt="book"/>
+        <h1>{title}</h1>
+        <p> {description}</p>
     </div>
 }
 ReactDOM.render(<BookList/>,
     document.getElementById('root')
 );
-reportWebVitals(console.log);
