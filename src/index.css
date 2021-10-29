@@ -1,0 +1,35 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: red;
+    background-color: #f1f7ff;
+}
+
+.booklist {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+
+}
+
+.book {
+    background: #fff;
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+.book h1{
+    margin: 10px 0;
+}
+
+@media screen and (min-width: 786px) {
+    .booklist {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
